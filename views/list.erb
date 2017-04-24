@@ -1,0 +1,38 @@
+<h1>List of all recipes</h1>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Recipes</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Status</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Time</th>
+        <th>Difficulty</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @recipes.each_with_index do |r, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><a href="/mark/<%= index %>"><%= r.status %></a></td>
+        <td><%= r.name %></td>
+        <td><%= r.description %></td>
+        <td><%= r.cooking_time %></td>
+        <td><%= r.difficulty %></td>
+        <td><a href="/delete/<%= index %>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></a></span>
+</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+

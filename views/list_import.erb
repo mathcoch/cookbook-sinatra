@@ -1,0 +1,34 @@
+<h1>List of Marmiton's recipes for import</h1>
+<h4>Click on the recipe you want to import</h4>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Marmiton's recipes</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Time</th>
+        <th>Difficulty</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @recipes.each_with_index do |r, index| %>
+      <tr>
+        <th scope="row"><a href="/import/<%= @keyword %>/<%= index %>"><%= index + 1 %></a></th>
+        <td><a href="/import/<%= @keyword %>/<%= index %>"><%= r.name %></a></td>
+        <td><%= r.description %></td>
+        <td><%= r.cooking_time %></td>
+        <td><%= r.difficulty %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
